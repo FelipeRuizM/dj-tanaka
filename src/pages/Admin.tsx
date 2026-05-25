@@ -27,7 +27,7 @@ export default function Admin() {
                 / Admin
               </p>
               <h1 className="text-chrome mt-2 text-3xl font-black tracking-tight uppercase md:text-4xl">
-                Shows
+                Events
               </h1>
             </div>
             <div className="flex items-center gap-3 text-xs text-white/50">
@@ -44,7 +44,7 @@ export default function Admin() {
 
           <section className="mt-10">
             <h2 className="mb-4 text-xs tracking-[0.35em] text-white/60 uppercase">
-              Add a show
+              Add an event
             </h2>
             <ShowForm
               onSubmit={async (draft) => {
@@ -56,7 +56,7 @@ export default function Admin() {
 
           <section className="mt-12">
             <h2 className="mb-4 text-xs tracking-[0.35em] text-white/60 uppercase">
-              All shows
+              All events
             </h2>
             <ShowsList />
           </section>

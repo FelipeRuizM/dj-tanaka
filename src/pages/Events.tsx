@@ -19,7 +19,23 @@ function formatDate(iso: string): { month: string; day: string; year: string } {
   };
 }
 
-export default function Shows() {
+function formatTime(hhmm: string): string {
+  if (!hhmm) return "";
+  const [h, m] = hhmm.split(":").map(Number);
+  if (Number.isNaN(h) || Number.isNaN(m)) return hhmm;
+  const period = h >= 12 ? "PM" : "AM";
+  const hour12 = h % 12 || 12;
+  return `${hour12}:${m.toString().padStart(2, "0")} ${period}`;
+}
+
+function formatTimeRange(start: string, end: string): string {
+  const s = formatTime(start);
+  const e = formatTime(end);
+  if (s && e) return `${s} – ${e}`;
+  return s || e;
+}
+
+export default function Events() {
   const [shows, setShows] = useState<Show[]>([]);
   const [loaded, setLoaded] = useState(false);
 
@@ -52,7 +68,7 @@ export default function Shows() {
             / Upcoming
           </p>
           <h1 className="text-chrome mt-3 text-5xl leading-[0.95] font-black tracking-tight uppercase md:mt-4 md:text-7xl">
-            Shows
+            Events
           </h1>
 
           <div className="mt-12 md:mt-16">
@@ -89,10 +105,11 @@ export default function Shows() {
 
 function ShowRow({ show }: { show: Show }) {
   const { month, day, year } = formatDate(show.date);
+  const timeRange = formatTimeRange(show.startTime, show.endTime);
 
   return (
-    <li className="grid grid-cols-[auto_1fr] items-center gap-x-5 gap-y-2 py-6 md:grid-cols-[auto_1fr_auto] md:gap-x-10 md:py-8">
-      <div className="text-center">
+    <li className="grid grid-cols-[4rem_1fr] items-center gap-x-5 gap-y-2 py-6 md:grid-cols-[5rem_1fr_auto] md:gap-x-10 md:py-8">
+      <div className="text-center tabular-nums">
         <div className="text-xs tracking-[0.3em] text-white/50 uppercase">
           {month}
         </div>
@@ -105,8 +122,24 @@ function ShowRow({ show }: { show: Show }) {
       </div>
 
       <div>
-        <p className="text-xl font-semibold md:text-2xl">{show.venue}</p>
-        <p className="text-sm text-white/60 md:text-base">{show.city}</p>
+        <RoleBadge role={show.role} />
+        {show.name && (
+          <p className="mt-1.5 text-chrome text-2xl leading-tight font-black tracking-tight uppercase md:text-3xl">
+            {show.name}
+          </p>
+        )}
+        <p className="mt-1 text-lg font-semibold text-white/90 md:text-xl">
+          {show.venue}
+        </p>
+        <p className="text-sm text-white/60 md:text-base">
+          {show.city}
+          {timeRange && (
+            <>
+              <span className="mx-2 text-white/30">·</span>
+              <span className="text-white/70">{timeRange}</span>
+            </>
+          )}
+        </p>
         {show.notes && (
           <p className="mt-1 text-sm text-white/50">{show.notes}</p>
         )}
@@ -129,6 +162,35 @@ function ShowRow({ show }: { show: Show }) {
         )}
       </div>
     </li>
+  );
+}
+
+function RoleBadge({ role }: { role: Show["role"] }) {
+  // Default to "playing" for any legacy records without the field.
+  const r = role ?? "playing";
+  if (r === "playing") {
+    return (
+      <span
+        className="relative inline-flex items-center gap-2 overflow-hidden rounded-sm border border-[--color-accent-house]/60 bg-gradient-to-b from-[--color-accent-house]/20 to-[--color-accent-house]/5 px-2.5 py-1 font-display text-[10px] font-bold tracking-[0.35em] text-[--color-accent-house] uppercase"
+        style={{ boxShadow: "0 0 28px -6px rgba(109,240,255,0.55), inset 0 1px 0 0 rgba(255,255,255,0.12)" }}
+      >
+        <span
+          aria-hidden
+          className="block h-3 w-[3px] bg-[--color-accent-house]"
+          style={{ boxShadow: "0 0 8px rgba(109,240,255,0.95)" }}
+        />
+        <span className="scanlines relative">// I'm playing</span>
+      </span>
+    );
+  }
+  return (
+    <span
+      className="relative inline-flex items-center gap-2 rounded-sm border border-[--color-accent-latin]/50 bg-gradient-to-b from-[--color-accent-latin]/15 to-[--color-accent-latin]/[0.03] px-2.5 py-1 font-display text-[10px] font-bold tracking-[0.35em] text-[--color-accent-latin] uppercase"
+      style={{ boxShadow: "inset 0 1px 0 0 rgba(255,255,255,0.08)" }}
+    >
+      <span aria-hidden className="text-[--color-accent-latin]">✦</span>
+      <span>// I'll be there</span>
+    </span>
   );
 }
 

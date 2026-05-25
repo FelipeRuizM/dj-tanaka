@@ -32,10 +32,10 @@ export default function Hero() {
           transition={{ delay: 0.6, duration: 0.6 }}
         >
           <Link
-            to="/shows"
+            to="/events"
             className="group relative inline-flex h-12 items-center gap-3 overflow-hidden rounded-full border border-white/30 bg-white/5 px-6 text-sm tracking-[0.3em] uppercase backdrop-blur transition-colors hover:border-white/80 hover:bg-white hover:text-black md:h-14 md:px-8"
           >
-            <span>Upcoming Shows</span>
+            <span>Upcoming Events</span>
             <span aria-hidden className="transition-transform group-hover:translate-x-1">
               →
             </span>

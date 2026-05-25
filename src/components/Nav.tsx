@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 const links = [
   { to: "/about", label: "About" },
-  { to: "/shows", label: "Shows" },
+  { to: "/events", label: "Events" },
   { to: "/booking", label: "Booking" },
 ];
 

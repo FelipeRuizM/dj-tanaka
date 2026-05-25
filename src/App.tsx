@@ -10,8 +10,8 @@ import Booking from "./pages/Booking";
 import NotFound from "./pages/NotFound";
 
 // Lazy-load anything that pulls in Firebase. Keeps the initial bundle small
-// for first-time visitors who never touch shows/admin.
-const Shows = lazy(() => import("./pages/Shows"));
+// for first-time visitors who never touch events/admin.
+const Events = lazy(() => import("./pages/Events"));
 const Admin = lazy(() => import("./pages/Admin"));
 
 export default function App() {
@@ -28,7 +28,7 @@ export default function App() {
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/shows" element={<Shows />} />
+              <Route path="/events" element={<Events />} />
               <Route path="/booking" element={<Booking />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="*" element={<NotFound />} />
