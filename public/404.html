@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanaka</title>
+    <script>
+      // Redirect any unknown GitHub Pages URL back to index, preserving the
+      // hash route. HashRouter handles the rest. This is a defensive net even
+      // though hash URLs never trigger a 404 in normal use.
+      (function () {
+        var path = window.location.pathname;
+        var hash = window.location.hash;
+        var search = window.location.search;
+        var origin = window.location.origin;
+        var basePath = (path.match(/^\/[^\/]+\//) || ["/"])[0];
+        var dest = origin + basePath + (hash || "#/") + (search || "");
+        window.location.replace(dest);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

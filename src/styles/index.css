@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0a0a;
+  --color-chrome: #c9ccd1;
+  --color-chrome-dim: #6a6d72;
+  --color-accent-latin: #ff5a2b;
+  --color-accent-house: #6df0ff;
+  --font-display: "Anton", "Impact", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    background: #000;
+    color: white;
+    font-family: var(--font-body);
+    overscroll-behavior: none;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-accent-latin);
+    color: #000;
+  }
+}
+
+/* Y2K chrome gradient text — used on wordmarks/headings. */
+@utility text-chrome {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #e8eaee 18%,
+    #9aa0a8 48%,
+    #ffffff 52%,
+    #b5b9c0 80%,
+    #4a4d52 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+  text-shadow: 0 0 24px rgba(109, 240, 255, 0.15);
+}
+
+/* Subtle moving scanline overlay for the VHS feel. */
+@utility scanlines {
+  position: relative;
+}
+
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.04) 0px,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+  animation: scan 7s linear infinite;
+}
+
+@keyframes scan {
+  from { transform: translateY(0); }
+  to   { transform: translateY(3px); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@utility marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee,
+  .scanlines::after {
+    animation: none !important;
+  }
+}
