@@ -35,6 +35,8 @@ export default function About() {
                 <img
                   src={`${base}visuals/profile.jpeg`}
                   alt="Tanaka"
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
                 <div className="scanlines pointer-events-none absolute inset-0" />

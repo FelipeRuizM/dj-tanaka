@@ -6,10 +6,12 @@ export default function Hero() {
 
   return (
     <section className="relative h-dvh w-full overflow-hidden">
+      {/* Black background renders instantly; the video streams in over it. */}
+      <div className="absolute inset-0 bg-black" />
       <video
         className="absolute inset-0 h-full w-full object-cover"
         src={`${base}visuals/hero.mp4`}
-        poster={`${base}visuals/logo.png`}
+        poster={`${base}visuals/logo.svg`}
         autoPlay
         muted
         loop
