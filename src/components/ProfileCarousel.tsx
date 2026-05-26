@@ -35,7 +35,7 @@ export default function ProfileCarousel({
 
   return (
     <div className="relative">
-      <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-sm border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent md:max-w-none">
+      <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent md:max-w-none">
         <AnimatePresence initial={false}>
           <motion.img
             key={images[index]}

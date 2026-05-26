@@ -12,7 +12,7 @@ export default function NotFound() {
           </p>
           <Link
             to="/"
-            className="mt-10 inline-flex h-12 items-center rounded-sm border border-white/30 px-6 text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black"
+            className="mt-10 inline-flex h-12 items-center rounded-full border border-white/30 px-6 text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black"
           >
             ← Back to home
           </Link>

@@ -151,12 +151,12 @@ function ShowRow({ show }: { show: Show }) {
             href={show.ticketUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-11 items-center rounded-sm bg-white px-5 text-xs font-medium tracking-[0.25em] text-black uppercase transition-transform hover:scale-[1.02]"
+            className="inline-flex h-11 items-center rounded-full bg-white px-5 text-xs font-medium tracking-[0.25em] text-black uppercase transition-transform hover:scale-[1.02]"
           >
             Tickets →
           </a>
         ) : (
-          <span className="inline-flex h-11 items-center rounded-sm border border-white/20 px-5 text-xs tracking-[0.25em] text-white/60 uppercase">
+          <span className="inline-flex h-11 items-center rounded-full border border-white/20 px-5 text-xs tracking-[0.25em] text-white/60 uppercase">
             Soon
           </span>
         )}
@@ -196,7 +196,7 @@ function RoleBadge({ role }: { role: Show["role"] }) {
 
 function EmptyState() {
   return (
-    <div className="rounded-sm border border-white/10 bg-white/[0.02] p-8 text-center md:p-14">
+    <div className="rounded-lg border border-white/10 bg-white/[0.02] p-8 text-center md:p-14">
       <p className="text-chrome text-2xl font-black md:text-3xl">
         Next dates dropping soon.
       </p>
@@ -205,7 +205,7 @@ function EmptyState() {
       </p>
       <Link
         to="/booking"
-        className="mt-6 inline-flex h-11 items-center rounded-sm border border-white/30 px-5 text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black"
+        className="mt-6 inline-flex h-11 items-center rounded-full border border-white/30 px-5 text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black"
       >
         Or book a date →
       </Link>

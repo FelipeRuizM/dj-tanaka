@@ -61,7 +61,7 @@ export default function About() {
                   href={`https://instagram.com/${IG_HANDLE}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-11 items-center gap-2 rounded-sm border border-white/20 px-4 text-xs tracking-[0.25em] text-white/80 uppercase transition-colors hover:bg-white hover:text-black"
+                  className="inline-flex h-11 items-center gap-2 rounded-full border border-white/20 px-4 text-xs tracking-[0.25em] text-white/80 uppercase transition-colors hover:bg-white hover:text-black"
                 >
                   <InstagramIcon />
                   <span>Instagram</span>
@@ -70,7 +70,7 @@ export default function About() {
                   href={YOUTUBE_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-11 items-center gap-2 rounded-sm border border-white/20 px-4 text-xs tracking-[0.25em] text-white/80 uppercase transition-colors hover:bg-white hover:text-black"
+                  className="inline-flex h-11 items-center gap-2 rounded-full border border-white/20 px-4 text-xs tracking-[0.25em] text-white/80 uppercase transition-colors hover:bg-white hover:text-black"
                 >
                   <YouTubeIcon />
                   <span>YouTube</span>

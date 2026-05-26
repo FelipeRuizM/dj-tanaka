@@ -28,7 +28,7 @@ export default function ShowsList() {
       {shows.map((show) => (
         <li
           key={show.id}
-          className="rounded-sm border border-white/10 bg-white/[0.02] p-4"
+          className="rounded-lg border border-white/10 bg-white/[0.02] p-4"
         >
           {editingId === show.id ? (
             <ShowForm
@@ -85,14 +85,14 @@ export default function ShowsList() {
                 <button
                   type="button"
                   onClick={() => setEditingId(show.id)}
-                  className="rounded-sm border border-white/20 px-3 py-1.5 text-[10px] tracking-[0.25em] uppercase hover:bg-white hover:text-black"
+                  className="rounded-full border border-white/20 px-3 py-1.5 text-[10px] tracking-[0.25em] uppercase hover:bg-white hover:text-black"
                 >
                   Edit
                 </button>
                 <button
                   type="button"
                   onClick={() => handleDelete(show)}
-                  className="rounded-sm border border-red-400/40 px-3 py-1.5 text-[10px] tracking-[0.25em] text-red-300 uppercase hover:bg-red-400 hover:text-black"
+                  className="rounded-full border border-red-400/40 px-3 py-1.5 text-[10px] tracking-[0.25em] text-red-300 uppercase hover:bg-red-400 hover:text-black"
                 >
                   Delete
                 </button>

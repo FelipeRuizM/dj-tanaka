@@ -33,7 +33,7 @@ export default function Booking() {
               href={`https://instagram.com/${IG_HANDLE}`}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex h-14 items-center gap-3 rounded-sm bg-white px-8 text-sm font-medium tracking-[0.2em] text-black uppercase transition-transform hover:scale-[1.02] md:h-16 md:px-10"
+              className="group inline-flex h-14 items-center gap-3 rounded-full bg-white px-8 text-sm font-medium tracking-[0.2em] text-black uppercase transition-transform hover:scale-[1.02] md:h-16 md:px-10"
             >
               <span>DM on Instagram</span>
               <span aria-hidden className="transition-transform group-hover:translate-x-1">
@@ -49,7 +49,7 @@ export default function Booking() {
             {["Clubs", "Private Events", "Weddings", "Brand Activations"].map((tag) => (
               <li
                 key={tag}
-                className="rounded-sm border border-white/15 px-3 py-1.5"
+                className="rounded-full border border-white/15 px-3 py-1.5"
               >
                 {tag}
               </li>
