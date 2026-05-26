@@ -1,10 +1,19 @@
 import PageTransition from "../components/PageTransition";
+import ProfileCarousel from "../components/ProfileCarousel";
 
 const IG_HANDLE = import.meta.env.VITE_INSTAGRAM_HANDLE || "dj.tanaka_";
 const YOUTUBE_URL = "https://www.youtube.com/@matheustanaka5385";
 
 export default function About() {
   const base = import.meta.env.BASE_URL;
+
+  const carouselImages = [
+    `${base}visuals/tanaka-pfp/photo1.webp`,
+    `${base}visuals/tanaka-pfp/photo2.webp`,
+    `${base}visuals/tanaka-pfp/photo3.webp`,
+    `${base}visuals/tanaka-pfp/photo4.webp`,
+    `${base}visuals/tanaka-pfp/photo5.webp`,
+  ];
 
   return (
     <PageTransition>
@@ -29,24 +38,8 @@ export default function About() {
           </h1>
 
           <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] md:gap-16">
-            {/* Portrait — swap public/visuals/profile.png with the real photo. */}
-            <div className="relative">
-              <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent md:max-w-none">
-                <img
-                  src={`${base}visuals/profile.jpeg`}
-                  alt="Tanaka"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover"
-                />
-                <div className="scanlines pointer-events-none absolute inset-0" />
-              </div>
-              {/* Chrome reflection accent under the frame */}
-              <div
-                aria-hidden
-                className="mx-auto mt-3 h-px max-w-sm bg-gradient-to-r from-transparent via-white/40 to-transparent md:max-w-none"
-              />
-            </div>
+            {/* Portrait carousel — auto-rotates through template images. */}
+            <ProfileCarousel images={carouselImages} />
 
             <div>
               <div className="space-y-6 text-base leading-relaxed text-white/80 md:text-lg">
