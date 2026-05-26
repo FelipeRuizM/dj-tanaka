@@ -7,7 +7,7 @@ export default function DjCourseTeaser() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 text-center md:flex-row md:gap-5">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-3 py-1 text-[9px] tracking-[0.4em] text-white/50 uppercase md:text-[10px]">
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent-latin)]" />
-          Coming later this year
+          Coming soon
         </span>
         <span className="text-chrome text-lg font-black tracking-tight uppercase md:text-2xl">
           DJ Course
