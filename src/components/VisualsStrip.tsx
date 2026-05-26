@@ -4,10 +4,8 @@
 const TAGS = [
   "Latin",
   "House",
-  "Reggaetón",
   "Tech House",
   "Brazilian Funk",
-  "Perreo",
   "Open Format",
 ];
 

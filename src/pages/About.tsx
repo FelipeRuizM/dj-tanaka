@@ -51,16 +51,15 @@ export default function About() {
             <div>
               <div className="space-y-6 text-base leading-relaxed text-white/80 md:text-lg">
                 <p>
-                  Tanaka is a Vancouver-based DJ blending the heat of Latin rhythms with the
-                  relentless drive of house music. Born from late-night dance floors and
-                  early-morning afterparties across BC, his sets move fluidly between
-                  reggaetón, perreo, tech house, and afro house — built for crowds that want
-                  to feel something, not just hear something.
+                  Meet Matheus Tanaka, also known as TANAKA, a Brazilian-born DJ who is now thriving 
+                  in Canada. His passion for Brazilian funk, house, and tech house can be found woven 
+                  into his sets as they hum the rhythms of his homeland. TANAKA's goal? To tour the 
+                  world, blending Brazilian music seamlessly with house beats, creating a fusion.
                 </p>
                 <p>
-                  He plays clubs, private events, and underground parties throughout British
-                  Columbia, with a sound rooted in groove, identity, and the chrome-tinted
-                  future he projects on screen.
+                  With each performance, he unites diverse cultures through his music, cultivating 
+                  unique and unforgettable experiences. TANAKA's mission is clear: to spread joy and 
+                  cultural fusion through his exciting DJ sets.
                 </p>
               </div>
 
