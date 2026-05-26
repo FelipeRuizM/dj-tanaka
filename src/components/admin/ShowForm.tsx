@@ -75,7 +75,7 @@ export default function ShowForm({ initial, onSubmit, onCancel, submitLabel = "S
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4 rounded-lg border border-white/10 bg-white/[0.02] p-4 md:p-6">
+    <form onSubmit={handleSubmit} className="grid gap-4 rounded-sm border border-white/10 bg-white/[0.02] p-4 md:p-6">
       <Field label="Event name">
         <input
           type="text"
@@ -91,7 +91,7 @@ export default function ShowForm({ initial, onSubmit, onCancel, submitLabel = "S
         <div
           role="radiogroup"
           aria-label="My role at this event"
-          className="inline-flex rounded-full border border-white/15 bg-white/[0.04] p-1"
+          className="inline-flex rounded-sm border border-white/15 bg-white/[0.04] p-1"
         >
           {(
             [
@@ -107,7 +107,7 @@ export default function ShowForm({ initial, onSubmit, onCancel, submitLabel = "S
                 role="radio"
                 aria-checked={active}
                 onClick={() => update("role", opt.value)}
-                className={`min-w-[110px] rounded-full px-4 py-2 text-xs tracking-[0.2em] uppercase transition-colors ${
+                className={`min-w-[110px] rounded-sm px-4 py-2 text-xs tracking-[0.2em] uppercase transition-colors ${
                   active
                     ? "bg-white text-black"
                     : "text-white/70 hover:text-white"
@@ -199,7 +199,7 @@ export default function ShowForm({ initial, onSubmit, onCancel, submitLabel = "S
         <button
           type="submit"
           disabled={saving}
-          className="inline-flex h-11 items-center rounded-full bg-white px-5 text-xs font-medium tracking-[0.25em] text-black uppercase disabled:opacity-50"
+          className="inline-flex h-11 items-center rounded-sm bg-white px-5 text-xs font-medium tracking-[0.25em] text-black uppercase disabled:opacity-50"
         >
           {saving ? "Saving…" : submitLabel}
         </button>
@@ -207,7 +207,7 @@ export default function ShowForm({ initial, onSubmit, onCancel, submitLabel = "S
           <button
             type="button"
             onClick={onCancel}
-            className="inline-flex h-11 items-center rounded-full border border-white/20 px-5 text-xs tracking-[0.25em] uppercase"
+            className="inline-flex h-11 items-center rounded-sm border border-white/20 px-5 text-xs tracking-[0.25em] uppercase"
           >
             Cancel
           </button>
@@ -218,7 +218,7 @@ export default function ShowForm({ initial, onSubmit, onCancel, submitLabel = "S
         .input {
           background: rgba(255,255,255,0.04);
           border: 1px solid rgba(255,255,255,0.12);
-          border-radius: 8px;
+          border-radius: 2px;
           padding: 12px 14px;
           color: white;
           font-size: 15px;

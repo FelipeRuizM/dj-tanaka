@@ -83,7 +83,7 @@ export default function Nav() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="relative z-[70] grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/60 md:hidden"
+            className="relative z-[70] grid h-11 w-11 place-items-center rounded-sm border border-white/15 bg-black/60 md:hidden"
           >
             <span className="relative block h-4 w-5">
               <span

@@ -21,7 +21,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
             aria-label={`Instagram — @${IG_HANDLE}`}
-            className="inline-flex h-11 items-center gap-2 rounded-full border border-white/15 px-4 text-xs tracking-[0.2em] text-white/70 uppercase transition-colors hover:border-white/50 hover:text-white"
+            className="inline-flex h-11 items-center gap-2 rounded-sm border border-white/15 px-4 text-xs tracking-[0.2em] text-white/70 uppercase transition-colors hover:border-white/50 hover:text-white"
           >
             <InstagramIcon />
             <span className="hidden sm:inline">@{IG_HANDLE}</span>
@@ -31,7 +31,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
             aria-label="YouTube channel"
-            className="inline-flex h-11 items-center gap-2 rounded-full border border-white/15 px-4 text-xs tracking-[0.2em] text-white/70 uppercase transition-colors hover:border-white/50 hover:text-white"
+            className="inline-flex h-11 items-center gap-2 rounded-sm border border-white/15 px-4 text-xs tracking-[0.2em] text-white/70 uppercase transition-colors hover:border-white/50 hover:text-white"
           >
             <YouTubeIcon />
             <span className="hidden sm:inline">YouTube</span>

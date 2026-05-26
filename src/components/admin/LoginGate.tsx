@@ -47,8 +47,8 @@ export default function LoginGate({ state }: { state: State }) {
         {state.kind === "not-configured" && (
           <p className="mt-8 text-sm text-white/60">
             Firebase is not configured. Add{" "}
-            <code className="rounded bg-white/10 px-1">VITE_FIREBASE_*</code> values to{" "}
-            <code className="rounded bg-white/10 px-1">.env.local</code> and reload.
+            <code className="rounded-sm bg-white/10 px-1">VITE_FIREBASE_*</code> values to{" "}
+            <code className="rounded-sm bg-white/10 px-1">.env.local</code> and reload.
           </p>
         )}
 
@@ -67,7 +67,7 @@ export default function LoginGate({ state }: { state: State }) {
             <button
               type="button"
               onClick={() => auth && signOut(auth)}
-              className="mt-8 inline-flex h-11 items-center rounded-full border border-white/30 px-5 text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black"
+              className="mt-8 inline-flex h-11 items-center rounded-sm border border-white/30 px-5 text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black"
             >
               Sign out
             </button>
@@ -117,7 +117,7 @@ function SignInForm() {
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-lg border border-white/15 bg-white/[0.04] px-4 py-3 text-base text-white focus:border-white/40 focus:outline-none"
+          className="w-full rounded-sm border border-white/15 bg-white/[0.04] px-4 py-3 text-base text-white focus:border-white/40 focus:outline-none"
         />
       </label>
 
@@ -131,7 +131,7 @@ function SignInForm() {
           autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full rounded-lg border border-white/15 bg-white/[0.04] px-4 py-3 text-base text-white focus:border-white/40 focus:outline-none"
+          className="w-full rounded-sm border border-white/15 bg-white/[0.04] px-4 py-3 text-base text-white focus:border-white/40 focus:outline-none"
         />
       </label>
 
@@ -140,7 +140,7 @@ function SignInForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="mt-2 inline-flex h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-medium tracking-[0.2em] text-black uppercase transition-transform hover:scale-[1.02] disabled:opacity-50"
+        className="mt-2 inline-flex h-12 items-center justify-center rounded-sm bg-white px-6 text-sm font-medium tracking-[0.2em] text-black uppercase transition-transform hover:scale-[1.02] disabled:opacity-50"
       >
         {submitting ? "Signing in…" : "Sign in"}
       </button>

@@ -74,7 +74,7 @@ export default function InstagramFeed() {
             href={`https://instagram.com/${IG_HANDLE}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-11 items-center rounded-full border border-white/30 px-6 text-xs tracking-[0.3em] uppercase"
+            className="inline-flex h-11 items-center rounded-sm border border-white/30 px-6 text-xs tracking-[0.3em] uppercase"
           >
             @{IG_HANDLE} →
           </a>

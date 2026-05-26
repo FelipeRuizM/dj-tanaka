@@ -35,7 +35,7 @@ export default function Admin() {
               <button
                 type="button"
                 onClick={() => auth && signOut(auth)}
-                className="rounded-full border border-white/20 px-3 py-1.5 text-[10px] tracking-[0.25em] uppercase hover:bg-white hover:text-black"
+                className="rounded-sm border border-white/20 px-3 py-1.5 text-[10px] tracking-[0.25em] uppercase hover:bg-white hover:text-black"
               >
                 Sign out
               </button>
