@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 
-const IG_HANDLE = import.meta.env.VITE_INSTAGRAM_HANDLE || "dj.tanaka_";
+const IG_HANDLE = import.meta.env.VITE_INSTAGRAM_HANDLE || "itistanaka";
 const YOUTUBE_URL = "https://www.youtube.com/@matheustanaka5385";
+const SOUNDCLOUD_URL =
+  "https://soundcloud.com/matt-tanaka-942814406?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing";
+const SPOTIFY_URL =
+  "https://open.spotify.com/user/matheustanaka68?si=jBwtsUgrTPmEM6N4RvwKrQ";
 
 export default function Footer() {
   return (
@@ -36,6 +40,26 @@ export default function Footer() {
             <YouTubeIcon />
             <span className="hidden sm:inline">YouTube</span>
           </a>
+          <a
+            href={SOUNDCLOUD_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="SoundCloud"
+            className="inline-flex h-11 items-center gap-2 rounded-full border border-white/15 px-4 text-xs tracking-[0.2em] text-white/70 uppercase transition-colors hover:border-white/50 hover:text-white"
+          >
+            <SoundCloudIcon />
+            <span className="hidden sm:inline">SoundCloud</span>
+          </a>
+          <a
+            href={SPOTIFY_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Spotify"
+            className="inline-flex h-11 items-center gap-2 rounded-full border border-white/15 px-4 text-xs tracking-[0.2em] text-white/70 uppercase transition-colors hover:border-white/50 hover:text-white"
+          >
+            <SpotifyIcon />
+            <span className="hidden sm:inline">Spotify</span>
+          </a>
         </nav>
 
         <p className="text-xs tracking-widest text-white/40 uppercase">
@@ -58,6 +82,22 @@ function YouTubeIcon() {
   return (
     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
       <path d="M23.5 6.2a3 3 0 0 0-2.12-2.12C19.45 3.5 12 3.5 12 3.5s-7.45 0-9.38.58A3 3 0 0 0 .5 6.2C0 8.13 0 12 0 12s0 3.87.5 5.8a3 3 0 0 0 2.12 2.12C4.55 20.5 12 20.5 12 20.5s7.45 0 9.38-.58a3 3 0 0 0 2.12-2.12C24 15.87 24 12 24 12s0-3.87-.5-5.8zM9.6 15.5V8.5L15.8 12 9.6 15.5z" />
+    </svg>
+  );
+}
+
+function SoundCloudIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
+      <path d="M1.18 12.6c-.06 0-.1.04-.11.1l-.2 1.7.2 1.66c.01.06.05.1.11.1.05 0 .1-.04.1-.1l.24-1.66-.24-1.7c0-.06-.05-.1-.1-.1zm1.03-.93c-.06 0-.11.05-.12.11l-.27 2.62.27 2.55c.01.06.06.11.12.11.06 0 .11-.05.11-.11l.31-2.55-.31-2.62c0-.06-.05-.11-.11-.11zm1.06-.36c-.07 0-.13.05-.13.13l-.25 2.96.25 2.84c0 .07.06.13.13.13.07 0 .12-.06.13-.13l.29-2.84-.29-2.96c-.01-.07-.06-.13-.13-.13zm1.08-.13c-.08 0-.14.06-.14.14l-.24 3.08.24 2.96c0 .08.06.14.14.14.07 0 .14-.06.14-.14l.27-2.96-.27-3.08c0-.08-.07-.14-.14-.14zm1.1.1c-.08 0-.15.07-.15.15l-.22 2.97.22 2.96c0 .08.07.15.15.15.08 0 .15-.07.15-.15l.25-2.96-.25-2.97c0-.08-.07-.15-.15-.15zm1.13-1.1c-.09 0-.16.07-.16.16l-.21 4.06.21 2.94c0 .09.07.16.16.16.09 0 .16-.07.16-.16l.24-2.94-.24-4.06c0-.09-.07-.16-.16-.16zm1.14-.74c-.1 0-.17.08-.17.17l-.2 4.79.2 2.92c0 .09.07.17.17.17.09 0 .17-.08.17-.17l.22-2.92-.22-4.79c0-.09-.08-.17-.17-.17zm1.16-.3c-.1 0-.18.08-.18.18l-.18 5.08.18 2.9c0 .1.08.18.18.18.1 0 .18-.08.18-.18l.2-2.9-.2-5.08c0-.1-.08-.18-.18-.18zm1.17.05c-.1 0-.19.08-.19.19l-.17 5.02.17 2.88c0 .11.09.19.19.19.11 0 .19-.08.19-.19l.19-2.88-.19-5.02c0-.11-.08-.19-.19-.19zm1.19-.71c-.11 0-.2.09-.2.2l-.16 5.72.16 2.86c0 .11.09.2.2.2.11 0 .2-.09.2-.2l.18-2.86-.18-5.72c0-.11-.09-.2-.2-.2zm1.32-1.34c-.12 0-.21.1-.21.21l-.14 7.05.14 2.84c0 .12.1.21.21.21.12 0 .21-.09.22-.21l.16-2.84-.16-7.05c-.01-.12-.1-.21-.22-.21zm1.21.2c-.12 0-.22.1-.22.22l-.13 6.84.13 2.82c0 .12.1.22.22.22.12 0 .22-.1.22-.22l.15-2.82-.15-6.84c0-.12-.1-.22-.22-.22zm1.36-.86c-.13 0-.23.1-.23.23l-.12 7.47.12 2.8c0 .12.1.23.23.23.13 0 .23-.1.23-.23l.13-2.8-.13-7.47c0-.13-.1-.23-.23-.23zm1.23.13c-.13 0-.24.11-.24.24l-.11 7.33.11 2.78c0 .13.11.24.24.24.13 0 .24-.11.24-.24l.13-2.78-.13-7.33c0-.13-.11-.24-.24-.24zm2.43 3.85c-.34 0-.66.07-.95.19-.2-2.2-2.05-3.93-4.31-3.93-.55 0-1.09.11-1.56.29-.18.07-.23.14-.23.28v9.4c0 .14.11.25.25.26h6.8c1.36 0 2.46-1.1 2.46-2.46 0-1.36-1.1-2.47-2.46-2.47z" />
+    </svg>
+  );
+}
+
+function SpotifyIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
+      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.59 14.43a.62.62 0 0 1-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 1 1-.28-1.22c3.81-.87 7.08-.5 9.72 1.11.3.18.39.57.21.86zm1.22-2.72a.78.78 0 0 1-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 1 1-.45-1.49c3.63-1.1 8.15-.57 11.24 1.33.37.22.48.7.25 1.07zm.11-2.84c-3.23-1.92-8.56-2.1-11.64-1.16a.93.93 0 1 1-.54-1.78c3.54-1.07 9.42-.87 13.14 1.34a.93.93 0 1 1-.96 1.6z" />
     </svg>
   );
 }

@@ -1,6 +1,6 @@
 import PageTransition from "../components/PageTransition";
 
-const IG_HANDLE = import.meta.env.VITE_INSTAGRAM_HANDLE || "dj.tanaka_";
+const IG_HANDLE = import.meta.env.VITE_INSTAGRAM_HANDLE || "itistanaka";
 
 export default function Booking() {
   return (

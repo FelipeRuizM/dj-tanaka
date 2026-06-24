@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const IG_HANDLE = import.meta.env.VITE_INSTAGRAM_HANDLE || "dj.tanaka_";
+const IG_HANDLE = import.meta.env.VITE_INSTAGRAM_HANDLE || "itistanaka";
 const BEHOLD_FEED_ID = import.meta.env.VITE_BEHOLD_FEED_ID;
 
 // Behold.so widget script — loaded once per page.

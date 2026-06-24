@@ -5,7 +5,7 @@ import { subscribeShows } from "../lib/shows";
 import { firebaseReady } from "../lib/firebase";
 import type { Show } from "../types";
 
-const IG_HANDLE = import.meta.env.VITE_INSTAGRAM_HANDLE || "dj.tanaka_";
+const IG_HANDLE = import.meta.env.VITE_INSTAGRAM_HANDLE || "itistanaka";
 
 function formatDate(iso: string): { month: string; day: string; year: string } {
   const d = new Date(iso);
