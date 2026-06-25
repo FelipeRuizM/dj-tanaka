@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 // Editorial photo collage that closes out the home page. Photos live in
 // /public/visuals/home-photos as home-1.webp … home-7.webp. Drop more files in
 // and extend the COUNT to grow the wall — the masonry reflows on its own.
-const COUNT = 7;
+const COUNT = 8;
 
 export default function HomeGallery() {
   const base = import.meta.env.BASE_URL;
