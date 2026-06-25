@@ -26,10 +26,10 @@ jobs:
       - run: npm ci
       - name: Build
         env:
-          # `${{ github.event.repository.name }}` resolves to the repo slug so
-          # asset paths line up with `https://user.github.io/<repo>/`. Override
-          # by setting VITE_BASE in repo settings if you use a custom domain.
-          VITE_BASE: /${{ github.event.repository.name }}/
+          # Custom domain (tanakamedia.com) serves from the root, so assets are
+          # referenced from `/`. Use `/${{ github.event.repository.name }}/`
+          # instead only when serving from `https://user.github.io/<repo>/`.
+          VITE_BASE: /
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
           VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
           VITE_FIREBASE_DATABASE_URL: ${{ secrets.VITE_FIREBASE_DATABASE_URL }}
