@@ -19,4 +19,8 @@ const app = firebaseReady ? initializeApp(firebaseConfig) : null;
 export const auth = app ? getAuth(app) : null;
 export const db = app ? getDatabase(app) : null;
 
-export const ADMIN_UID = import.meta.env.VITE_ADMIN_UID || "";
+// Comma-separated list of UIDs allowed into the admin panel.
+export const ADMIN_UIDS = (import.meta.env.VITE_ADMIN_UID || "")
+  .split(",")
+  .map((uid) => uid.trim())
+  .filter(Boolean);

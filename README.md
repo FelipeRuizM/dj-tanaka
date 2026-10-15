@@ -35,15 +35,15 @@ Open <http://localhost:5173>.
 ## Firebase setup
 
 1. Create a Firebase project, enable **Realtime Database** and **Email/Password Authentication**.
-2. In **Authentication → Users**, click **Add user** to create Tanaka's admin account. Copy the generated UID.
-3. Copy the web app config into `.env.local` and set `VITE_ADMIN_UID` to the UID from step 2, then add this RTDB rule:
+2. In **Authentication → Users**, click **Add user** to create each admin account (Tanaka's, plus any managers). Copy the generated UIDs.
+3. Copy the web app config into `.env.local` and set `VITE_ADMIN_UID` to the UIDs from step 2, comma-separated, then add this RTDB rule with the same UIDs:
 
 ```json
 {
   "rules": {
     "shows": {
       ".read": true,
-      ".write": "auth != null && auth.uid == 'TANAKA_UID_HERE'"
+      ".write": "auth != null && (auth.uid == 'TANAKA_UID_HERE' || auth.uid == 'MANAGER_UID_HERE')"
     }
   }
 }

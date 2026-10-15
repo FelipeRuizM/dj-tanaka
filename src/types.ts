@@ -6,6 +6,7 @@ export type Show = {
   date: string;           // ISO date (YYYY-MM-DD)
   startTime: string;      // 24h "HH:MM", e.g. "22:00"
   endTime: string;        // 24h "HH:MM", may roll past midnight
+  timeZone?: string;      // IANA zone the times are in; missing = America/Vancouver
   city: string;
   venue: string;
   role: ShowRole;         // "playing" = on the decks, "attending" = just there

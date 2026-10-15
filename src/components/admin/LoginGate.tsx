@@ -5,7 +5,7 @@ import {
   signOut,
   type User,
 } from "firebase/auth";
-import { ADMIN_UID, auth, firebaseReady } from "../../lib/firebase";
+import { ADMIN_UIDS, auth, firebaseReady } from "../../lib/firebase";
 
 type State =
   | { kind: "loading" }
@@ -23,7 +23,7 @@ export function useAuthState(): State {
     if (!auth) return;
     return onAuthStateChanged(auth, (user) => {
       if (!user) return setState({ kind: "signed-out" });
-      if (ADMIN_UID && user.uid !== ADMIN_UID) {
+      if (ADMIN_UIDS.length && !ADMIN_UIDS.includes(user.uid)) {
         return setState({ kind: "unauthorized", user });
       }
       setState({ kind: "authorized", user });

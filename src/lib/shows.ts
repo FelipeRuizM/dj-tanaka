@@ -25,7 +25,11 @@ export function subscribeShows(cb: (shows: Show[]) => void): () => void {
     const shows: Show[] = value
       ? Object.entries(value).map(([id, v]) => ({ id, ...v }))
       : [];
-    shows.sort((a, b) => a.date.localeCompare(b.date));
+    shows.sort(
+      (a, b) =>
+        a.date.localeCompare(b.date) ||
+        (a.startTime ?? "").localeCompare(b.startTime ?? "")
+    );
     cb(shows);
   });
 }

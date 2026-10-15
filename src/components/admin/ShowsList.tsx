@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Show, ShowDraft } from "../../types";
 import { deleteShow, subscribeShows, updateShow } from "../../lib/shows";
+import { timeZoneAbbr } from "../../lib/showTime";
 import ShowForm from "./ShowForm";
 
 export default function ShowsList() {
@@ -44,7 +45,7 @@ export default function ShowsList() {
                   {show.date}
                 </div>
                 <div className="text-[10px] tracking-[0.3em] text-white/40 uppercase">
-                  {show.startTime}{show.endTime ? `–${show.endTime}` : ""}
+                  {show.startTime}{show.endTime ? `–${show.endTime}` : ""} {timeZoneAbbr(show)}
                 </div>
                 <div className="mt-1 text-sm font-semibold">{show.city}</div>
               </div>

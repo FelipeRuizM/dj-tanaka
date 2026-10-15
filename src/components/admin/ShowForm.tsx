@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Show, ShowDraft } from "../../types";
+import { DEFAULT_TIME_ZONE, TIME_ZONES } from "../../lib/showTime";
 
 type Props = {
   initial?: Show;
@@ -13,6 +14,7 @@ const EMPTY: ShowDraft = {
   date: "",
   startTime: "21:00",
   endTime: "02:00",
+  timeZone: DEFAULT_TIME_ZONE,
   city: "",
   venue: "",
   role: "playing",
@@ -59,6 +61,7 @@ export default function ShowForm({ initial, onSubmit, onCancel, submitLabel = "S
         date: draft.date,
         startTime: draft.startTime,
         endTime: draft.endTime,
+        timeZone: draft.timeZone || DEFAULT_TIME_ZONE,
         city: draft.city.trim(),
         venue: draft.venue.trim(),
         role: draft.role,
@@ -149,6 +152,24 @@ export default function ShowForm({ initial, onSubmit, onCancel, submitLabel = "S
           />
         </Field>
       </div>
+
+      <Field label="Time zone (where the event is)">
+        <select
+          value={draft.timeZone || DEFAULT_TIME_ZONE}
+          onChange={(e) => update("timeZone", e.target.value)}
+          className="input"
+        >
+          {/* Keep a saved zone selectable even if it's not in the list. */}
+          {draft.timeZone && !TIME_ZONES.some((z) => z.value === draft.timeZone) && (
+            <option value={draft.timeZone}>{draft.timeZone}</option>
+          )}
+          {TIME_ZONES.map((z) => (
+            <option key={z.value} value={z.value}>
+              {z.label}
+            </option>
+          ))}
+        </select>
+      </Field>
 
       <div className="grid gap-4 md:grid-cols-2">
         <Field label="City">
